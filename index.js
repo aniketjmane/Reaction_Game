@@ -12,7 +12,6 @@ const getDiff = (startTime, endTime) =>{
 }
 
 let startTime, currTime;
-const currBest = Number.MAX_VALUE;
 
 const showShape = () => {
 
@@ -22,13 +21,6 @@ const showShape = () => {
         const timeTaken = document.getElementById('time-taken');
         timeTaken.innerHTML = getDiff(startTime, currTime);
         startTime = currTime;
-
-        if(timeTaken.innerText < currBest) {
-            currBest = Math.min(timeTaken, currBest);
-            const bestTime = document.getElementById('best-time');
-            bestTime.innerHTML = currBest + " s";
-            currBest = bestTime;
-        }
     } else {
         startTime = new Date();
     }
